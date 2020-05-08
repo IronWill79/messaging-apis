@@ -184,6 +184,23 @@ export default class TelegramClient {
       ...options,
     });
   }
+  
+  /**
+   * Use this method to send a die/dice. On success, the sent Message is returned.
+   *
+   * @param chatId Unique identifier for the target chat or username of the target channel (in the format @channelusername)
+   * @param options.disableNotification Sends the message silently. Users will receive a notification with no sound
+   * - https://core.telegram.org/bots/api#senddice
+   */
+  sendDice(
+    chatId: string | number,
+//    options?: Types.SendDiceOption
+  ): Promise<Types.Message> {
+    return this._request('/sendDice', {
+      chatId,
+//      ...options,
+    });
+  }
 
   /**
    * Use this method to forward messages of any kind. On success, the sent Message is returned.
