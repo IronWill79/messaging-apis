@@ -1503,6 +1503,36 @@ export type SendMessageOption = {
     | ForceReply;
 };
 
+export type SendDiceOption = {
+  /**
+   * Sends the message silently. Users will receive a notification with no sound.
+   *
+   * - https://telegram.org/blog/channels-2-0#silent-messages
+   */
+  disableNotification?: boolean;
+
+  /**
+   * If the message is a reply, ID of the original message
+   */
+  replyToMessageId?: number;
+
+  /**
+   * Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove reply keyboard or to force a reply from the user.
+   *
+   * - https://core.telegram.org/bots#inline-keyboards-and-on-the-fly-updating
+   * - https://core.telegram.org/bots#keyboards
+   * - https://core.telegram.org/bots/api#inlinekeyboardmarkup
+   * - https://core.telegram.org/bots/api#replykeyboardmarkup
+   * - https://core.telegram.org/bots/api#replykeyboardremove
+   * - https://core.telegram.org/bots/api#forcereply
+   */
+  replyMarkup?:
+    | InlineKeyboardMarkup
+    | ReplyKeyboardMarkup
+    | ReplyKeyboardRemove
+    | ForceReply;
+};
+
 export enum ParseMode {
   Markdown = 'Markdown',
   HTML = 'HTML',
