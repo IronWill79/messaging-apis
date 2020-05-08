@@ -191,6 +191,22 @@ client.sendMessage(CHAT_ID, 'hi', {
 
 <br />
 
+## `sendDice(chatId)` - [Official Docs](https://core.telegram.org/bots/api/#senddice)
+
+Sends a die/dice.
+
+| Param   | Type                              | Description                                                              |
+| ------- | --------------------------------- | ------------------------------------------------------------------------ |
+| chatId  | <code>Number &#124; String</code> | Unique identifier for the target chat or username of the target channel. |
+
+Example:
+
+```js
+client.sendDice(CHAT_ID);
+```
+
+<br />
+
 ## `sendPhoto(chatId, photo [, options])` - [Official Docs](https://core.telegram.org/bots/api/#sendphoto)
 
 Sends photos.
