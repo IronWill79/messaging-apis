@@ -1503,6 +1503,11 @@ export type SendMessageOption = {
     | ForceReply;
 };
 
+export enum DiceOption = {
+  GameDie = "\u01F3B2",
+  DirectHit = "\u01F3AF",
+};
+
 export type SendDiceOption = {
   /**
    * Sends the message silently. Users will receive a notification with no sound.
