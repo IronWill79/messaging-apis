@@ -189,15 +189,19 @@ export default class TelegramClient {
    * Use this method to send a die/dice. On success, the sent Message is returned.
    *
    * @param chatId Unique identifier for the target chat or username of the target channel (in the format @channelusername)
+   * @param emoji Emoji on which the dice throw animation is based. Currently, must be one of “🎲” (Types.DiceOption.GameDie)
+   *   or “🎯” (Types.DiceOption.DirectHit). Defaults to “🎲”
    * @param options Options for other optional parameters.
    * - https://core.telegram.org/bots/api#senddice
    */
   sendDice(
     chatId: string | number,
+    emoji: Types.DiceOption = Types.DiceOption.GameDie,
     options?: Types.SendDiceOption
   ): Promise<Types.Message> {
     return this._request('/sendDice', {
       chatId,
+      emoji,
       ...options,
     });
   }
